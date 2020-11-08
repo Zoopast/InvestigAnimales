@@ -1,9 +1,66 @@
 <!DOCTYPE html>
 <html>
     <head>
+        {% load static %}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name='viewport' content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <title>InvestigAnimales</title>
+        <link rel='stylesheet' type="text/css" media='screen' href="{% static 'InvestigAnimalesApp/css/bootstrap.min.css' %}">
+        <link rel='stylesheet' type="text/css" media='screen' href="{% static 'InvestigAnimalesApp/css/style.css' %}">
     </head>
     <body>
-        <h1>InvestigAnimales</h1>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="{% url 'index' %}">InvestigaAnimales</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="quienessomos.html">Quienes somos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="objetivo.html">Nuestro objetivo</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contacto.html">Contáctanos</a>
+                </li>
+              </ul>
+            </div>
+        </nav>
+
+        <h3><b>Conoce un poco sobre animales fantasticos:</b></h3>
+
+        <div class="card-deck">
+            <div class="card text-white bg-dark mb-3" style="width: 18rem;">
+                <img src="{% static 'InvestigAnimalesApp/img/carpincho.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Carpincho</h5>
+                  <p class="card-text">Es el roedor viviente de mayor tamaño y peso del mundo</p>
+                  <a href="#" class="btn btn-primary">Aprende mas sobre el!</a>
+                </div>
+            </div>
+            <div class="card text-white bg-dark mb-3" style="width: 18rem;">
+                <img src="{% static 'InvestigAnimalesApp/img/carpincho.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Carpincho</h5>
+                  <p class="card-text">Es el roedor viviente de mayor tamaño y peso del mundo</p>
+                  <a href="#" class="btn btn-primary">Aprende mas sobre el!</a>
+                </div>
+            </div>
+            <div class="card text-white bg-dark mb-3" style="width: 18rem;">
+                <img src="{% static 'InvestigAnimalesApp/img/carpincho.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Carpincho</h5>
+                  <p class="card-text">Es el roedor viviente de mayor tamaño y peso del mundo</p>
+                  <a href="#" class="btn btn-primary">Aprende mas sobre el!</a>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script type='text/javascript' src="{% static 'InvestigAnimales/js/bootstrap.min.js' %}"></script>
     </body>
 </html>
