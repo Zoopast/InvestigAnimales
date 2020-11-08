@@ -9,3 +9,5 @@ class Animal(models.Model):
     imagen = models.ImageField(upload_to='Animal')
     created = models.DateTimeField(auto_now_add=True)
     update = models.DateTimeField(auto_now_add=True)
+
+
