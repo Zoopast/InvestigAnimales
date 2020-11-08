@@ -8,7 +8,7 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <title>InvestigAnimales</title>
         <link rel='stylesheet' type="text/css" media='screen' href="{% static 'InvestigAnimalesApp/css/bootstrap.min.css' %}">
-        <link rel='stylesheet' type="text/css" media='screen' href="{% static 'InvestigAnimalesApp/css/style.css' %}">
+        <link rel='stylesheet' type="text/css" media='screen' href="{% static 'InvestigAnimalesApp/css/signupform.css' %}">
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -45,36 +45,35 @@
               </ul>
             </div>
         </nav>
-
-        <h3><b>Conoce un poco sobre animales fantasticos:</b></h3>
-
-        <div class="card-deck">
-            <div class="card text-white bg-dark mb-3" style="width: 18rem;">
-                <img src="{% static 'InvestigAnimalesApp/img/carpincho.jpg' %}" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Carpincho</h5>
-                  <p class="card-text">Es el roedor viviente de mayor tamaño y peso del mundo</p>
-                  <a href="#" class="btn btn-primary">Aprende mas sobre el!</a>
+        <div class="container">
+            <h3>Registrate</h3>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="username">Usuario</label>
+                    <input type="text" id="username" class="form-control" required>
                 </div>
-            </div>
-            <div class="card text-white bg-dark mb-3" style="width: 18rem;">
-                <img src="{% static 'InvestigAnimalesApp/img/carpincho.jpg' %}" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Carpincho</h5>
-                  <p class="card-text">Es el roedor viviente de mayor tamaño y peso del mundo</p>
-                  <a href="#" class="btn btn-primary">Aprende mas sobre el!</a>
+                <div class="form-group">
+                    <label for="first_name">Nombre completo</label>
+                    <input type="text" id="fist_name" class="form-control" required>
                 </div>
-            </div>
-            <div class="card text-white bg-dark mb-3" style="width: 18rem;">
-                <img src="{% static 'InvestigAnimalesApp/img/carpincho.jpg' %}" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Carpincho</h5>
-                  <p class="card-text">Es el roedor viviente de mayor tamaño y peso del mundo</p>
-                  <a href="#" class="btn btn-primary">Aprende mas sobre el!</a>
+                <div class="form-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" class="form-control" required>
                 </div>
-            </div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="pass2">Confirmar Contraseña</label>
+                    <input type="password" id="pass2" class="form-control" required>
+                </div>
+                <div class="form-group center">
+                    <button type="submit" class="btn btn-primary">Registrate</button>
+                </div>
+            </form>
         </div>
-
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script type='text/javascript' src="{% static 'InvestigAnimales/js/bootstrap.min.js' %}"></script>
     </body>

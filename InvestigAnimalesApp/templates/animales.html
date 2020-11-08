@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>InvestigAnimales</title>
+</head>
+<body>
+    <h1>Listado animales:</h1>
+</body>
+    {%for animal in listaAnimales%}
+        <p>Nombre: {{animal.nombre}} <img src="{{animal.imagen.url}}"></p>
+    {%endfor%}
+</html>
