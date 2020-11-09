@@ -2,12 +2,61 @@
 <html>
 
 <head>
-    <title>InvestigAnimales</title>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <title>InvestigaAnimales</title>
+    <meta name='viewport' content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' type="text/css" media='screen' href="{% static 'InvestigAnimalesApp/css/bootstrap.min.css' %}">
+    <link rel='stylesheet' type="text/css" media='screen' href="{% static 'InvestigAnimalesApp/css/contactanos.css' %}">
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="{% url 'index' %}">InvestigaAnimales</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'quienessomos'%}">Quienes somos</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'objetivo' %}">Nuestro objetivo</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'contactanos'%}">Contáctanos</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'animales' %}">Listado de animales</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">Cierra sesión</a>
+            </li>
+            {%else%}
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Inicia sesión</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'signup' %}">Registrate</a>
+            </li>
+            {%endif%}
+        </ul>
+        </div>
+    </nav>
     <h1>Listado animales:</h1>
+    <div class="card-deck">
+        {%for animal in listaAnimales%} 
+        <div class="card text-white bg-dark mb-3" style="width: 18rem;">
+          <img src="{{animal.imagen.url}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{animal.nombre}}</h5>
+            <p class="card-text">{{animal.descripcion}}</p>
+            <a href="{{animal.url}}" target="_blank" class="btn btn-primary">Aprende mas sobre el!</a>
+          </div>
+        </div>          
+        {%endfor%}
+      </div>
 </body>
-    {%for animal in listaAnimales%}
-        <p>Nombre: {{animal.nombre}} <img src="{{animal.imagen.url}}"></p>
-    {%endfor%}
 </html>

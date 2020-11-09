@@ -7,7 +7,8 @@ from .forms import SignUpForm
 
 # Create your views here.
 def home(request):
-    return render(request, "index.html")
+    listadoAnimales = Animal.objects.all()
+    return render(request, "index.html", {"listaAnimales":listadoAnimales})
 
 def animales(request):
 
@@ -29,3 +30,12 @@ def signup(request):
     else:
         form = SignUpForm()
     return render(request, "signup.html",{'form':form})
+
+def contactanos(request):
+    return render(request, "contacto.html")
+
+def objetivo(request):
+    return render(request, "objetivo.html")
+
+def quienessomos(request):
+    return render(request, "quienessomos.html")
